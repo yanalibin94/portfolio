@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: var(--font-tiny5);
+  --font-script: var(--font-jacquard);
+  --font-mono: var(--font-plex);
+  --font-sans: var(--font-inter);
+
+  --color-ink: #000000;
+  --color-ink-soft: rgba(0, 0, 0, 0.7);
+  --color-link: #0044ff;
+  --color-rule: rgba(0, 0, 0, 0.1);
+
+  --text-wordmark: clamp(1.25rem, 1.25vw, 1.5rem);
+  --text-wordmark--line-height: 1.33;
+  --text-wordmark--letter-spacing: -0.05em;
+
+  --text-hola: clamp(2.25rem, 3.33vw, 4rem);
+  --text-hola--line-height: 1;
+  --text-hola--letter-spacing: -0.036em;
+
+  --text-yana: clamp(2.75rem, 4.58vw, 5.5rem);
+  --text-yana--line-height: 1;
+  --text-yana--letter-spacing: -0.026em;
+
+  --text-since: clamp(2.5rem, 4.32vw, 5.1875rem);
+  --text-since--line-height: 1;
+  --text-since--letter-spacing: -0.028em;
+
+  --text-intro: clamp(1.125rem, 1.46vw, 1.75rem);
+  --text-intro--line-height: 1.5;
+  --text-intro--letter-spacing: -0.082em;
+
+  --text-cta: clamp(2.25rem, 3.33vw, 4rem);
+  --text-cta--line-height: 1.29;
+  --text-cta--letter-spacing: -0.036em;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page-x: clamp(1.25rem, 2.5vw, 3rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility px-page {
+  padding-inline: var(--page-x);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.compare,
+.compare:focus,
+.compare:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.compare img {
+  border: 0;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
