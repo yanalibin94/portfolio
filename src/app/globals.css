@@ -67,8 +67,27 @@ body {
   -webkit-touch-callout: none;
 }
 
+.type-caret {
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .type-caret {
+    animation: none;
   }
 }

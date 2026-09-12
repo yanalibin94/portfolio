@@ -1,3 +1,4 @@
+import { TypeCycle } from "@/components/TypeCycle";
 import { site } from "@/content/site";
 
 export function ContactSection() {
@@ -6,7 +7,12 @@ export function ContactSection() {
       id="contact"
       className="flex scroll-mt-32 flex-col items-center gap-[13px] px-page py-[clamp(4rem,6.25vw,7.5rem)] text-center"
     >
-      <h2 className="font-display text-cta text-ink">{site.contact.heading}</h2>
+      <h2 className="min-h-[1.3em] font-display text-cta text-ink">
+        <span className="sr-only">{site.contact.headings[0]}</span>
+        <span aria-hidden="true">
+          <TypeCycle phrases={site.contact.headings} />
+        </span>
+      </h2>
       <p className="max-w-[767px] font-mono text-intro text-ink">
         {site.contact.lead}
         <a

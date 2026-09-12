@@ -25,8 +25,12 @@ export const site = {
     "I turn technical systems into simple, useful experiences. I use AI to accelerate my process while keeping human insight at the core, understanding users, solving real problems, and building scalable design systems.",
 
   contact: {
-    heading: "Want to Talk more?",
-    lead: "To view full workflows ",
+    headings: [
+      "Want to talk more?",
+      "Get Flan recipe",
+      "Ask about design",
+    ],
+    lead: "To view full use cases and more ",
     link: "contact me",
   },
 
