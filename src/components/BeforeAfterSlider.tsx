@@ -5,10 +5,35 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 
 import { site } from "@/content/site";
+
+function SliderPhoto({
+  src,
+  mobileSrc,
+  alt,
+  style,
+}: {
+  src: string;
+  mobileSrc: string;
+  alt: string;
+  style?: CSSProperties;
+}) {
+  return (
+    <picture className="absolute inset-0 block size-full" style={style}>
+      <source media="(max-width: 767px)" srcSet={mobileSrc} />
+      <img
+        src={src}
+        alt={alt}
+        draggable={false}
+        className="size-full border-0 object-cover outline-none"
+      />
+    </picture>
+  );
+}
 
 export function BeforeAfterSlider() {
   const frameRef = useRef<HTMLDivElement>(null);
@@ -50,8 +75,7 @@ export function BeforeAfterSlider() {
   return (
     <div
       ref={frameRef}
-      className="compare relative w-full cursor-ew-resize overflow-hidden bg-white outline-none select-none [-webkit-tap-highlight-color:transparent]"
-      style={{ aspectRatio: "1196 / 470" }}
+      className="compare relative w-full cursor-ew-resize overflow-hidden bg-white outline-none select-none [-webkit-tap-highlight-color:transparent] aspect-[1024/626] md:aspect-[1024/402]"
       onPointerDown={start}
       role="slider"
       aria-label="Compare childhood and today"
@@ -65,17 +89,11 @@ export function BeforeAfterSlider() {
       }}
     >
       {/* Both photos stay full-size. Only the top layer's clip-path changes. */}
-      <img
-        src={site.slider.base.src}
-        alt={site.slider.base.alt}
-        draggable={false}
-        className="absolute inset-0 size-full border-0 object-cover outline-none"
-      />
-      <img
+      <SliderPhoto src={site.slider.base.src} mobileSrc={site.slider.base.mobileSrc} alt={site.slider.base.alt} />
+      <SliderPhoto
         src={site.slider.top.src}
+        mobileSrc={site.slider.top.mobileSrc}
         alt={site.slider.top.alt}
-        draggable={false}
-        className="absolute inset-0 size-full border-0 object-cover outline-none"
         style={{ clipPath: `inset(0 ${100 - percent}% 0 0)` }}
       />
       <div

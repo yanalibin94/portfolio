@@ -10,11 +10,13 @@ export const site = {
 
   slider: {
     base: {
-      src: "/images/slider-base.png",
+      src: "/images/slider-base.jpg",
+      mobileSrc: "/images/slider-base-mobile.png",
       alt: "Yana today",
     },
     top: {
-      src: "/images/slider-top.png",
+      src: "/images/slider-top.jpg",
+      mobileSrc: "/images/slider-top-mobile.png",
       alt: "Yana as a child",
     },
   },
