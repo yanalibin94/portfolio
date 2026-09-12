@@ -5,7 +5,7 @@ export const site = {
   hero: {
     greeting: "Hola",
     name: "I'm Yana!",
-    since: "Designing since 1994",
+    since: "Designing since 2004",
   },
 
   slider: {
