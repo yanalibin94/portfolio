@@ -1,7 +1,6 @@
 export type WorkItem = {
   slug: string;
   title: string;
-  background: string;
 };
 
 export const site = {
@@ -32,17 +31,14 @@ export const site = {
     {
       slug: "security-clarity",
       title: "Designing security clarity at enterprise scale.",
-      background: "linear-gradient(180deg, #f4f4f4 0%, #71a7ff 100%)",
     },
     {
       slug: "ai-workflow-automation",
       title: "Designing an AI workflow automation platform",
-      background: "#080910",
     },
     {
       slug: "multi-cloud-access",
       title: "Multi-cloud access management, simplified for dev teams.",
-      background: "#dce7ff",
     },
   ] satisfies WorkItem[],
 
