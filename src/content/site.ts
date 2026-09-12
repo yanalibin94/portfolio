@@ -1,8 +1,3 @@
-export type WorkItem = {
-  slug: string;
-  title: string;
-};
-
 export const site = {
   name: "Yana Libina",
   email: "Yanalibin@gmail.com",
@@ -26,21 +21,6 @@ export const site = {
 
   intro:
     "I turn technical systems into simple, useful experiences. I use AI to accelerate my process while keeping human insight at the core, understanding users, solving real problems, and building scalable design systems.",
-
-  work: [
-    {
-      slug: "security-clarity",
-      title: "Designing security clarity at enterprise scale.",
-    },
-    {
-      slug: "ai-workflow-automation",
-      title: "Designing an AI workflow automation platform",
-    },
-    {
-      slug: "multi-cloud-access",
-      title: "Multi-cloud access management, simplified for dev teams.",
-    },
-  ] satisfies WorkItem[],
 
   contact: {
     heading: "Want to Talk more?",
